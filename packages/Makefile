@@ -1,4 +1,4 @@
-subdir = centos-7
+subdir =  almalinux-8.7
 
 .PHONY: all build clean test $(subdir)
 
