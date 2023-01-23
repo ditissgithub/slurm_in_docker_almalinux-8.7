@@ -1,0 +1,8 @@
+.idea
+.DS_Store
+home
+secret
+modules
+modulefiles
+base/rpms
+packages/centos-7/rpms
