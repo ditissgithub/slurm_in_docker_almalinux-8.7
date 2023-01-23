@@ -1,7 +1,7 @@
-FROM krallin/centos-tini:7
+FROM almalinux:8.7
 MAINTAINER Michael J. Stealey <stealey@renci.org>
 
-ENV SLURM_VERSION=19.05.1 \
+ENV SLURM_VERSION=20.11.9 \
   MUNGE_UID=981 \
   SLURM_UID=982 \
   WORKER_UID=1000
@@ -14,6 +14,9 @@ RUN groupadd -g $MUNGE_UID munge \
   && useradd  -m -c "Workflow user" -d /home/worker -u $WORKER_UID -g worker  -s /bin/bash worker
 
 # install packages for general functionality
+RUN yum makecache --refresh
+RUN dnf --enablerepo=powertools -y install  mariadb-devel munge-devel perl-Switch
+
 RUN yum -y install \
   epel-release \
   && yum -y install \
@@ -22,14 +25,12 @@ RUN yum -y install \
   which \
   tree \
   mariadb-server \
-  mariadb-devel \
   munge \
   munge-libs \
-  munge-devel \
   openssh-server \
   openssh-clients
 
-# install slurm 19.05.1
+# install slurm 20.11.9
 COPY rpms /packages
 # /usr/bin/mpiexec from slurm-torque conflicts with openmpi install
 WORKDIR /packages
@@ -44,3 +45,4 @@ VOLUME ["/home", "/.secret"]
 # 6818:         Slurm D
 # 6819:         Slurm DBD
 EXPOSE 22 3306 6817 6818 6819
+
