@@ -1,5 +1,5 @@
 
-SLURM_VERSION = 19.05.1
+SLURM_VERSION = 20.11.9
 IMAGE = scidas/slurm.worker
 
 .PHONY: all build clean test
