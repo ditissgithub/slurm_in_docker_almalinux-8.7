@@ -1,4 +1,15 @@
+
 # Slurm in Docker
+
+WORK FLOW :
+Step1. Install Docker container run time on system(if not available)
+       a. sudo yum install -y yum-utils
+       b. sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+       c. sudo yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin --allowerasing
+       d. sudo systemctl start docker
+       e. sudo systemctl enable docker 
 
 **WORK IN PROGRESS**
 
@@ -8,7 +19,7 @@ This work represents a small exploratory Slurm cluster using CentOS 7 based Dock
 
 Images include:
 
-- [Slurm 19.05.1](https://slurm.schedmd.com) - installed from [rpm packages](packages)
+- [Slurm 20.11.9](https://slurm.schedmd.com) - installed from [rpm packages](packages)
 - [OpenMPI 3.0.1](https://www.open-mpi.org/doc/current/) - installed from [rpm packages](packages)
 - [Lmod 7.7](http://lmod.readthedocs.io/en/latest/index.html) - installed from [distribution files](https://sourceforge.net/projects/lmod/files/)
   - [Lmod module packages for CentOS 7](https://github.com/scidas/lmod-modules-centos) - Organized for Slurm-in-Docker use
@@ -16,7 +27,7 @@ Images include:
 
 ## Contents
 
-1. [packages](packages) - Build the RPM packages for running Slurm and OpenMPI on CentOS 7
+1. [packages](packages) - Build the RPM packages for running Slurm and OpenMPI on AlmaLinux-8.7
 2. [base](base) - Slurm base image from which other components are derived
 3. [controller](controller) - Slurm controller (head-node) definition
 4. [database](database) - Slurm database definition (not necessary, but useful for accounting information)
@@ -85,11 +96,11 @@ Verify image build
 ```console
 $ docker images
 REPOSITORY             TAG                 IMAGE ID            CREATED                  SIZE
-scidas/slurm.base   19.05.1             1600621cb483        Less than a second ago   819MB
+scidas/slurm.base   20.11.9             1600621cb483        Less than a second ago   819MB
 ...
 ```
 
-All images defined in `docker-compose.yml` will be built from the `scidas/slurm.base:19.05.1` base image
+All images defined in `docker-compose.yml` will be built from the `scidas/slurm.base:20.11.9` base image
 
 ## Usage
 
