@@ -30,7 +30,7 @@ a. cd /
 
 b. wget https://github.com/krallin/tini/releases/download/v0.19.0/tini_0.19.0.rpm  
 
-c. yum install tini_0.19.0.rpm
+c. yum install -y  tini_0.19.0.rpm
 
 d. cp /usr/bin/tini* /usr/local/bin/
 
