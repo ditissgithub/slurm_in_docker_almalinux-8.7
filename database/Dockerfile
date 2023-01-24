@@ -9,6 +9,10 @@ ENV DBD_ADDR=database \
   STORAGE_PASS=password \
   STORAGE_USER=slurm
 
+RUN wget https://github.com/krallin/tini/releases/download/v0.19.0/tini_0.19.0.rpm
+RUN yum -y  install tini_0.19.0.rpm
+RUN cp /usr/bin/tini* /usr/local/bin/
+
 # clean up
 RUN rm -f /packages/slurm-*.rpm /packages/openmpi-*.rpm \
   && yum clean all \
