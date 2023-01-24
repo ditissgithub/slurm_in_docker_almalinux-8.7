@@ -34,8 +34,8 @@ WORKDIR /home/worker
 # clean up
 RUN rm -f /packages/slurm-*.rpm /packages/openmpi-*.rpm \
   && yum clean all \
-  && rm -rf /var/cache/yum \
-  && rm -f /Lmod-7.7.tar.bz2
+  && rm -rf /var/cache/yum 
+ # && rm -f /Lmod-7.7.tar.bz2
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
