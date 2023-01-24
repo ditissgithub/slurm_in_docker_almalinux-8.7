@@ -2,14 +2,20 @@
 # Slurm in Docker
 
 WORK FLOW :
+
 Step1. Install Docker container run time on system(if not available)
-       a. sudo yum install -y yum-utils
-       b. sudo yum-config-manager \
+       
+a. sudo yum install -y yum-utils
+      
+b. sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
-       c. sudo yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin --allowerasing
-       d. sudo systemctl start docker
-       e. sudo systemctl enable docker 
+   
+c. sudo yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin --allowerasing
+  
+d. sudo systemctl start docker
+   
+e. sudo systemctl enable docker 
 
 **WORK IN PROGRESS**
 
