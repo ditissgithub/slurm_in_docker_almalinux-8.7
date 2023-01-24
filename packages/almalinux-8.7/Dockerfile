@@ -35,6 +35,7 @@ RUN dnf --enablerepo=powertools -y install munge-devel hwloc-devel openssl-devel
   && yum -y group install "Development Tools"
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 VOLUME ["/packages"]
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["ls", "-alh", "/packages"]
