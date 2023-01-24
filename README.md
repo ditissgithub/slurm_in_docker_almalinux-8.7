@@ -5,7 +5,7 @@ WORK FLOW :
 
 Step1. Install Docker container run time on system(if not available)
        
-a. sudo yum install -y yum-utils
+a. yum install -y sudo && sudo yum install -y yum-utils 
       
 b. sudo yum-config-manager \
     --add-repo \
@@ -26,13 +26,17 @@ b. chmod +x /usr/local/bin/docker-compose
 
 Step3. Install tini package on docker-host machine
 
-a. cd /
+a. cd / &&  yum install -y wget
 
 b. wget https://github.com/krallin/tini/releases/download/v0.19.0/tini_0.19.0.rpm  
 
 c. yum install tini_0.19.0.rpm
 
 d. cp /usr/bin/tini* /usr/local/bin/
+
+Step4. Install make command
+
+a. yum install cmake -y
 
 **WORK IN PROGRESS**
 
