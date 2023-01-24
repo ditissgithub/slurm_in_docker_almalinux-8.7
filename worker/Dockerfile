@@ -10,7 +10,7 @@ RUN yum -y install \
   /packages/openmpi-*.rpm
 
 
-WORKDIR /Lmod-7.7
+
 # install Lmod 7.7i
 RUN dnf --enablerepo=powertools -y install lua-devel
 RUN yum -y install \
@@ -20,14 +20,14 @@ RUN yum -y install \
   wget \
   bzip2 \
   expectk \
-  make \
-  && wget https://sourceforge.net/projects/lmod/files/Lmod-7.7.tar.bz2 \
-  && tar -xjvf Lmod-7.7.tar.bz2
+  make 
+#  && wget https://sourceforge.net/projects/lmod/files/Lmod-7.7.tar.bz2 \
+#  && tar -xjvf Lmod-7.7.tar.bz2
 #WORKDIR /Lmod-7.7
-RUN ./configure --prefix=/opt/apps \
-  && make install \
-  && ln -s /opt/apps/lmod/lmod/init/profile /etc/profile.d/z00_lmod.sh \
-  && ln -s /opt/apps/lmod/lmod/init/cshrc /etc/profile.d/z00_lmod.csh
+#RUN ./configure --prefix=/opt/apps \
+ # && make install \
+ # && ln -s /opt/apps/lmod/lmod/init/profile /etc/profile.d/z00_lmod.sh \
+ # && ln -s /opt/apps/lmod/lmod/init/cshrc /etc/profile.d/z00_lmod.csh
 
 WORKDIR /home/worker
 
