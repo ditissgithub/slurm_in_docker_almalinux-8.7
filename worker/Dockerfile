@@ -12,14 +12,11 @@ RUN yum -y install \
 
 
 # install Lmod 7.7i
-RUN dnf --enablerepo=powertools -y install lua-devel
+RUN dnf --enablerepo=powertools -y install lua-devel lua-posix lua-filesystem expect
 RUN yum -y install \
-  lua-posix \
   lua \
-  lua-filesystem \
   wget \
   bzip2 \
-  expectk \
   make 
 #  && wget https://sourceforge.net/projects/lmod/files/Lmod-7.7.tar.bz2 \
 #  && tar -xjvf Lmod-7.7.tar.bz2
