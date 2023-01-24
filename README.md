@@ -17,6 +17,23 @@ d. sudo systemctl start docker
    
 e. sudo systemctl enable docker 
 
+
+Step2. Install docker compose 
+
+a. curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+b. chmod +x /usr/local/bin/docker-compose
+
+Step3. Install tini package on docker-host machine
+
+a. cd /
+
+b. wget https://github.com/krallin/tini/releases/download/v0.19.0/tini_0.19.0.rpm  
+
+c. yum install tini_0.19.0.rpm
+
+d. cp /usr/bin/tini* /usr/local/bin/
+
 **WORK IN PROGRESS**
 
 Use [Docker](https://www.docker.com/) to explore the various components of [Slurm](https://www.schedmd.com/index.php)
