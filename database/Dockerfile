@@ -20,4 +20,6 @@ RUN rm -f /packages/slurm-*.rpm /packages/openmpi-*.rpm \
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
+RUN chmod +x /docker-entrypoint.sh
+
 ENTRYPOINT ["/usr/local/bin/tini", "--", "/docker-entrypoint.sh"]
