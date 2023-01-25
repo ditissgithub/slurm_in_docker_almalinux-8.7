@@ -35,7 +35,8 @@ cd -
 EOF2
   chmod +x /home/worker/setup-worker-ssh.sh
   chown worker: /home/worker/setup-worker-ssh.sh
-  sudo -u worker /home/worker/setup-worker-ssh.sh
+  ./home/worker/setup-worker-ssh.sh
+  #sudo -u worker /home/worker/setup-worker-ssh.sh
 }
 
 # start munge and generate key
