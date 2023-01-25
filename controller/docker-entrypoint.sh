@@ -35,7 +35,7 @@ cd -
 EOF2
   chmod +x /home/worker/setup-worker-ssh.sh
   chown worker: /home/worker/setup-worker-ssh.sh
-  ./home/worker/setup-worker-ssh.sh
+  bash /home/worker/setup-worker-ssh.sh
   #sudo -u worker /home/worker/setup-worker-ssh.sh
 }
 
