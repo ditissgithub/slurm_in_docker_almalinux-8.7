@@ -22,6 +22,8 @@ RUN yum -y install \
   && yum -y install \
   sudo \
   wget \
+  passwd \
+  procps-ng \
   which \
   tree \
   mariadb-server \
