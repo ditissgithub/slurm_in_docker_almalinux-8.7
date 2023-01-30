@@ -1,6 +1,6 @@
 
 SLURM_VERSION = 20.11.9
-IMAGE = scidas/slurm.controller
+IMAGE = cdac_slurm.controller
 
 .PHONY: all build clean test
 
