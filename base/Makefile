@@ -1,6 +1,6 @@
 
 SLURM_VERSION = 20.11.9
-IMAGE = scidas/slurm.base
+IMAGE = cdac_slurm.base
 
 DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
