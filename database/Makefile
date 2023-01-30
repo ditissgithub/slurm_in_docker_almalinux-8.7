@@ -1,6 +1,6 @@
 
 SLURM_VERSION = 20.11.9
-IMAGE = scidas/slurm.database
+IMAGE = cdac_slurm.database
 
 .PHONY: all build clean test
 
