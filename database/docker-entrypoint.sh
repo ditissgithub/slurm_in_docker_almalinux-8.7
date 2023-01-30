@@ -129,6 +129,8 @@ _slurmdbd() {
     echo "### use provided slurmdbd.conf ###"
     cp /home/config/slurmdbd.conf /etc/slurm/slurmdbd.conf
   fi
+  chmod 600 /etc/slurm/slurmdbd.conf
+  chown slurm:slurm /etc/slurm/slurmdbd.conf
   /usr/sbin/slurmdbd
   cp /etc/slurm/slurmdbd.conf /.secret/slurmdbd.conf
 }
