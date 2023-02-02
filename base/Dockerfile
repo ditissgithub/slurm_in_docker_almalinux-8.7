@@ -24,6 +24,7 @@ RUN yum -y install \
   wget \
   passwd \
   procps-ng \
+  dhcp-client \
   net-tools \
   which \
   tree \
